@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>资源列表</title>
+    <link rel="stylesheet" th:href="@{/easyui/themes/default/easyui.css}">
+    <link rel="stylesheet" th:href="@{/easyui/themes/icon.css}">
+    <link rel="stylesheet" th:href="@{/css/default.css}">
+    <link rel="stylesheet" th:href="@{/css/icons.css}">
+</head>
+<body class="easyui-layout">
+<div data-options="region:'center'">
+    <!-- 表格 -->
+    <table id="dg">
+        <!-- 动态数据展示 -->
+    </table>
+</div>
+<script type="text/javascript" th:src="@{/easyui/jquery.min.js}"></script>
+<script type="text/javascript" th:src="@{/easyui/jquery.easyui.min.js}"></script>
+<script type="text/javascript" th:src="@{/easyui/locale/easyui-lang-zh_CN.js}"></script>
+<script type="text/javascript" th:src="@{/js/common.js}"></script>
+<script type="text/javascript" th:src="@{/js/resource.js}"></script>
+</body>
+</html>

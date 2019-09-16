@@ -1,0 +1,67 @@
+server:
+  port: 8001
+
+
+spring:
+  druid:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #url: jdbc:mysql://127.0.0.1:3306/db_houses?useUnicode=true&characterEncoding=utf8&useSSL=false
+    url: jdbc:mysql://127.0.0.1:3306/topj_db?serverTimezone=GMT%2B8&characterEncoding=utf8
+    username: root
+    password: root
+    maxActive: 30  #最大连接数
+    minIdle: 5  #最小连接数
+    maxWait: 10000   #获取连接的最大等候时间
+    test-on-borrow: false
+    test-on-return: false
+    test-while-idle: true
+    validation-query: SELECT 'x'
+    time-between-eviction-runs-millis: 60000  #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+    min-evictable-idle-time-millis: 30000  #配置一个连接在池中最小生存的时间，单位是毫秒
+
+  # thymeleaf
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: LEGACYHTML5
+    encoding: utf-8
+    cache: false
+
+  # Jpa
+  jpa:
+    database: mysql
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5InnoDBDialect
+        format_sql: true
+
+  # jackson
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: UTC
+    serialization:
+      indent_output: true
+
+  # 设置控制台彩色打印
+  output:
+    ansi:
+      enabled: always
+
+  # 发送邮件
+  mail:
+    host: smtp.qq.com
+    port: 25
+    default-encoding: utf-8
+    protocol: smtp
+    username: 1931063095@qq.com
+    password: ricdvsgeaveqfice
+    properties:
+      mail:
+        smtp:
+          auth: true  # 开启验证
+          starttls:
+            enable: true   # 使用明文通信的扩充功能
+            required: true   # 加密进行
